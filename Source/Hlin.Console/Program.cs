@@ -58,6 +58,9 @@ namespace Hlin.Console
                         var sourceFile = Path.Combine(directory, elements[1]);
                         var text = File.ReadAllText(sourceFile);
 
+                        if (!text.EndsWith("\n"))
+                            text = text + "\n";
+
                         if (first)
                         {
                             File.WriteAllText(targetFile, text);
